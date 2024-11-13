@@ -1,0 +1,50 @@
+<p-table #dt [value]="products" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,20]">
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+      <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
+      <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon></th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <th>
+        <input pInputText type="text" (input)="applyFilter($event, 'name', 'contains')" placeholder="Search by name">
+      </th>
+      <th>
+        <input pInputText type="text" (input)="applyFilter($event, 'price', 'contains')" placeholder="Search by price">
+      </th>
+      <th>
+        <input pInputText type="text" (input)="applyFilter($event, 'category', 'contains')" placeholder="Search by category">
+      </th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.category }}</td>
+      <td>
+        <button (click)="onEdit(product)" class="Edit_btn">Edit</button>
+        <button (click)="deleteProduct(product.id)" class="Edit_btn">Delete</button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<button (click)="showDialogToAdd()" class="add_product">Add Product</button>
+<form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+  <div class="p-field">
+    <label for="name">Name</label>
+    <input id="name" type="text" pInputText formControlName="name" />
+  </div>
+  <div class="p-field">
+    <label for="price">Price</label>
+    <input id="price" type="number" pInputText formControlName="price" />
+  </div>
+  <div class="p-field">
+    <label for="category">Category</label>
+    <input id="category" type="text" pInputText formControlName="category" />
+  </div>
+  <button class="save_product" type="submit">{{ selectedProduct ? 'Update' : 'Add' }} Save</button>
+</form>

@@ -1,0 +1,119 @@
+/* Style for the main table */
+.custom-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.custom-table td {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Add some space around the "Add Product" button */
+.add-product-button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Style for the dialog */
+.custom-dialog {
+    width: 400px;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.p-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.p-field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.p-field input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.p-error {
+    color: #f44336;
+    font-size: 0.8em;
+}
+
+.submit-button {
+    margin-top: 10px;
+    align-self: flex-end;
+}
+
+/* PrimeNG Button Styling for consistency */
+.p-button {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.p-button-success {
+    background-color: #4caf50;
+    border-color: #4caf50;
+    color: #fff;
+}
+
+.p-button-warning {
+    background-color: #ff9800;
+    border-color: #ff9800;
+    color: #fff;
+}
+
+.p-button-danger {
+    background-color: #f44336;
+    border-color: #f44336;
+    color: #fff;
+}
+
+.Edit_btn {
+    margin-right: 7px;
+    border: none;
+}
+
+.add_product {
+    border: none;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    background-color: burlywood;
+    border-radius: 8px;
+    width: 7%;
+    height: 26px;
+}
+.save_product{
+    margin-top: 16px;
+    border: none;
+    background-color: darkgoldenrod;
+    border-radius: 8px;
+    width: 7%;
+    height: 26px;
+}
